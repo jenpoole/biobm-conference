@@ -68,7 +68,7 @@
                 <img src="" alt="event image" style="width: 100%;">
                 
                 <!--Event Title-->
-                <h3><%= event.name %></h3>
+                <h3><%= link_to event.name, event_path(event) %></h3>
                 
                 <!--Event Location-->
                 <p><%= event.location %></p>

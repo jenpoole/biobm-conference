@@ -1,0 +1,259 @@
+<!-------------JUMBOTRON--------------------->
+    
+<div class="jumbotron" style="position: relative;">
+    <div class="container">
+        <h1><%= @event.name %></h1>
+        <h3>Month, Date, Year</h3>
+        <h3><%= @event.location %></h3>
+        
+        <p><button type="button" class="btn btn-lg btn-success">Register</button></p>
+    </div>
+    
+    
+    <!-------------QUICK EVENT INFO--------------------->
+    <div class="row" style="text-align: center; padding-top: 20px; padding-bottom: 20px; margin-top: -25px; z-index: 100; background-color: #007CC3; width: 90%; position: absolute; bottom: 0; left: 50%; transform: translate(-50%, 50%);">
+        <div class="container">
+            <div class="col-md-4">Date: <%= @event.starts_at %></div>
+            <div class="col-md-4">Location: <%= @event.location %></div>
+            <div class="col-md-4"># Tickets Available</div>
+        </div>
+    </div>
+</div>
+    
+    
+<!-------------FULL EVENT INFO--------------------->
+
+<div class="" style="text-align: center;padding-top: 50px; padding-bottom: 50px">
+    <div class="container">
+        <h1>About <%= @event.name %></h1>
+        
+        <p><%= @event.description %></p>
+        
+        <button type="button" class="btn btn-lg btn-success">Register</button> &nbsp;
+        <button type="button" class="btn btn-lg btn-info"><i class="fa fa-heart-o" aria-hidden="true"></i> Save</button>
+    </div>
+</div>
+    
+    
+<!-------------EVENT SCHEDULE--------------------->
+
+<div class="" style="text-align: center; padding-top: 20px; padding-bottom: 50px">
+    <div class="container">
+        <h1>Event Schedule</h1>
+        
+        <button type="submit" class="btn btn-default">Download Schedule</button>
+        
+        <div class="col-md-offset-3" style="width: 550px; margin-top: 30px">
+            <ul class="nav nav-pills nav-justified">
+              <li role="presentation" class="active"><a href="#profile">Day 1</a></li>
+              <li role="presentation"><a href="#messages">Day 2</a></li>
+              <li role="presentation"><a href="#settings">Day 3</a></li>
+            </ul>
+            
+            <table class="table table-bordered" style="margin-top: 20px;">
+                <thead >
+                  <tr>
+                    <th>Time</th>
+                    <th>Title</th>
+                    <th>Exhibitor</th>
+                    <th>Venue</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>10:00 AM</td>
+                    <td>Event Title</td>
+                    <td>Exhibitor</td>
+                    <td>Location</td>
+                  </tr>
+                  <tr>
+                    <td>11:00 AM</td>
+                    <td>Event Title</td>
+                    <td>Exhibitor</td>
+                    <td>Location</td>
+                  </tr>
+                  <tr>
+                    <td>1:00 PM</td>
+                    <td>Event Title</td>
+                    <td>Exhibitor</td>
+                    <td>Location</td>
+                  </tr>
+                  <tr>
+                    <td>2:00 PM</td>
+                    <td>Event Title</td>
+                    <td>Exhibitor</td>
+                    <td>Location</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>    
+   
+    
+<!-------------SPEAKERS / EXHIBITORS--------------------->
+<div class="" style="">
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 30px;">Exhibitors</h1>
+        
+        <div class="col-md-4">
+            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+            
+        </div>
+        
+        <div class="col-md-4">
+            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+            
+        </div>
+        
+        <div class="col-md-4">
+            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+            
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+            
+        </div>
+        
+    </div>
+</div>
+    
+    
+<!-------------PRICING--------------------->
+<div class="" style="">
+    <div class="container">
+        <h1 style="text-align: center; margin-bottom: 30px;">Pricing</h1>
+        
+        <div class="col-md-4">
+            <p style="text-align: center;"><i class="fa fa-usd fa-4x" aria-hidden="true"></i></p>
+            
+            <p style="text-align: center;"><strong>Tier 1</strong></p>
+            
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetuer adipiscing elit</li>
+                <li>sed diam nonummy nibh euismod</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <p style="text-align: center;"><i class="fa fa-usd fa-4x" aria-hidden="true"></i></p>
+            
+            <p style="text-align: center;"><strong>Tier 2</strong></p>
+            
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetuer adipiscing elit</li>
+                <li>sed diam nonummy nibh euismod</li>
+            </ul>
+        </div>
+        
+        <div class="col-md-4">
+            <p style="text-align: center;"><i class="fa fa-usd fa-4x" aria-hidden="true"></i></p>
+            
+            <p style="text-align: center;"><strong>Tier 3</strong></p>
+            
+            <ul>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>consectetuer adipiscing elit</li>
+                <li>sed diam nonummy nibh euismod</li>
+            </ul>
+        </div>
+        
+        
+    </div>
+    <div class="" style="text-align: center; margin-top: 30px; !important">
+        <button type="button" class="btn btn-lg btn-success" style="width: 250px;">Register</button> 
+    </div>
+</div>    
+    
+    
+<!-------------SPONSORS--------------------->
+<div class="" style="margin-top: 50px;">
+    <div class="container" style="text-align: center;">
+        <h1 style="text-align: center; margin-bottom: 30px;">Sponsors</h1>
+        
+        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        
+        <div class="row" style="text-align: center; margin-top: 130px; !important">
+         <button type="button" class="btn btn-default">Become A Sponsor</button> 
+        </div>
+    </div>
+</div>    
+    
+    
+<!-------------MEDIA & CONTACT--------------------->
+<div class="" style="margin-top: 50px;">
+    <div class="container">
+        <div class="col-md-5 col-md-offset-1" style="border: 1px solid black; text-align: center; margin-right: 15px; height: 320px;">
+            <h3>Contact Organizer</h3>
+            <p style=""><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+            <p>{Organizer Name}</p>
+            <p><i class="fa fa-facebook" aria-hidden="true"></i> <i class="fa fa-twitter" aria-hidden="true"></i></p>
+            <p><button type="button" class="btn btn-default"><i class="fa fa-envelope-o" aria-hidden="true"></i> Contact</button></p>
+        </div>
+        
+        <div class="col-md-5" style="border: 1px solid black; text-align: center; height: 320px;">
+            <h3>Media Kit</h3>
+            
+            <p><i class="fa fa-file-pdf-o" aria-hidden="true" style="font-size: 10em;"></i></p>
+            
+            <p><button type="button" class="btn btn-default"><i class="fa fa-download" aria-hidden="true"></i> Download</button></p>
+        </div>
+    </div>
+</div>    
+
+            
+<!-------------LOCATION MAP--------------------->  
+
+ <div class="" style="margin-top: 50px;">
+    <iframe style="width: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.6543390181715!2d-73.98621157322191!3d40.74844454332295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire+State+Building!5e0!3m2!1sen!2sus!4v1479156917396" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+</div>
+    
+    
+<!-------------UPCOMING EVENTS & SUBSCRIBE--------------------->
+
+<div class="" style="margin-top: 50px;">
+    <div class="container">
+        <div class="col-md-6">
+            <h3>Upcoming Events</h3>
+            <div class="col-md-5">
+                <p><i class="fa fa-picture-o fa-5x" aria-hidden="true"></i></p>
+                <p><strong>Event Name</strong> <br>
+                Event Location<br>
+                Event Date</p>
+            </div>
+            
+            <div class="col-md-5">
+                <p><i class="fa fa-picture-o fa-5x" aria-hidden="true"></i></p>
+                <p><strong>Event Name</strong> <br>
+                Event Location<br>
+                Event Date</p>
+            </div>
+            
+        </div>
+        
+        <div class="col-md-6">
+            <h3>Subscribe for Updates</h3>
+            
+            <form class="form-inline">
+              <div class="form-group">
+                <label for="email"></label>
+                <input type="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              
+              <button type="submit" class="btn btn-default">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</div>
