@@ -1,4 +1,6 @@
 <%= form_for (@event), :html => {:class => "form-horizontal"} do |f| %>
+
+    <%= render 'shared/errors' %>
     
     <div>
         <%= f.label :name, class: "control-label" %>
@@ -23,6 +25,11 @@
     <div>
         <%= f.label :starts_at, class: "control-label" %> <br>
         <%= f.datetime_select :starts_at, class: "form-control" %>
+    </div>
+    
+    <div>
+        <%= f.label :capacity, class: "control-label" %> <br>
+        <%= f.number_field :capacity, class: "form-control" %>
     </div>
     
     <div>

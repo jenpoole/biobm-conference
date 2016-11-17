@@ -1,0 +1,8 @@
+<% if @event.errors.any? %>
+    <div class="well">
+        <p>Please Correct the following:</p>
+        <% @event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+    </div>
+<% end %>

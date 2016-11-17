@@ -19,8 +19,11 @@ class EventsController < ApplicationController
     
     def update
         @event = Event.find(params[:id])
-        @event.update(event_params)
-        redirect_to event_path(@event)
+        if @event.update(event_params)
+            redirect_to event_path(@event)
+        else
+            render :edit
+        end
     end
     
     def new
@@ -29,8 +32,13 @@ class EventsController < ApplicationController
     
     def create
         @event = Event.new(event_params)
-        @event.save
-        redirect_to event_path(@event)
+        
+        if @event.save
+            redirect_to event_path(@event)
+        else
+            render :new
+        end
+    
     end
     
     def destroy 
@@ -45,6 +53,6 @@ class EventsController < ApplicationController
         end
         
         def event_params
-             params.require(:event).permit(:name, :description, :location, :price, :starts_at)
+             params.require(:event).permit(:name, :description, :location, :price, :starts_at, :capacity)
         end
 end

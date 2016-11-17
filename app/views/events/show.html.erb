@@ -15,7 +15,7 @@
         <div class="container">
             <div class="col-md-4">Date: <%= @event.starts_at %></div>
             <div class="col-md-4">Location: <%= @event.location %></div>
-            <div class="col-md-4"># Tickets Available</div>
+            <div class="col-md-4"><%= pluralize(@event.capacity, 'Ticket') %> Available</div>
         </div>
     </div>
 </div>
