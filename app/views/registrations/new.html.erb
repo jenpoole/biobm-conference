@@ -21,6 +21,36 @@
         </div>
         
         <div>
+            <%= f.label :company, class: "control-label" %>
+            <%= f.text_field :company, class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :location, "Location (City, State, Country)", class: "control-label" %>
+            <%= f.text_field :location, class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :position, "I am a:", class: "control-label" %> <br>
+            <%= f.select :position, Registration::POSITION_OPTIONS, prompt: "Please Choose One", class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :experience, "I would describe my experience as:", class: "control-label" %> <br>
+            <%= f.select :experience, Registration::EXPERIENCE_OPTIONS, prompt: "Please Choose One", class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :how_heard, "How did you hear about this event?", class: "control-label" %> <br>
+            <%= f.select :how_heard, Registration::HOW_HEARD_OPTIONS, prompt: "Please Choose One", class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :join_email_list, "Join our email list to receive notifications about upcoming events", class: "control-label" %> <br>
+            <%= f.select :join_email_list, Registration::JOIN_EMAIL_LIST_OPTIONS, class: "form-control" %>
+        </div>
+        
+        <div>
             <%= f.submit "Register", class: "btn btn-success" %>
             <%= link_to "Cancel", events_path, class: "btn btn-danger" %>
         </div>
