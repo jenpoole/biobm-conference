@@ -11,7 +11,7 @@ class Registration < ApplicationRecord
         'Exhibitor',
         'Media'
     ]
-    validates :position, inclusion: { in: POSITION_OPTIONS }
+    # validates :position, inclusion: { in: POSITION_OPTIONS }
     
     EXPERIENCE_OPTIONS = [
         'Student',
@@ -21,7 +21,7 @@ class Registration < ApplicationRecord
         'Management',
         'Executive'
     ]
-    validates :experience, inclusion: { in: EXPERIENCE_OPTIONS }
+    # validates :experience, inclusion: { in: EXPERIENCE_OPTIONS }
     
     HOW_HEARD_OPTIONS = [
         'Facebook',
@@ -31,13 +31,13 @@ class Registration < ApplicationRecord
         'Friend / Coworker',
         'Other'
     ]
-    validates :how_heard, inclusion: { in: HOW_HEARD_OPTIONS }
+    # validates :how_heard, inclusion: { in: HOW_HEARD_OPTIONS }
     
     JOIN_EMAIL_LIST_OPTIONS = [
         'Yes',
         'No'
     ]
-    validates :join_email_list, inclusion: { in: JOIN_EMAIL_LIST_OPTIONS }
+    # validates :join_email_list, inclusion: { in: JOIN_EMAIL_LIST_OPTIONS }
     
     
     belongs_to :event
