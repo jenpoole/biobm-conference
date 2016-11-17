@@ -1,24 +1,18 @@
 class EventsController < ApplicationController
-    
-    def home
-    end
+    # Find event before actions
+    before_action :find_event, only: [:show, :edit, :update, :destroy]
     
     def index
-        # @events = Event.all
-        
-        @events = Event.upcoming
+        @events = Event.all
     end
     
     def show
-        @event = Event.find(params[:id])
     end
     
     def edit
-        @event = Event.find(params[:id])
     end
     
     def update
-        @event = Event.find(params[:id])
         if @event.update(event_params)
             redirect_to event_path(@event), notice: 'Event successfully updated!'
         else
@@ -38,11 +32,9 @@ class EventsController < ApplicationController
         else
             render :new
         end
-    
     end
     
     def destroy 
-        @event = Event.find(params[:id])
         @event.destroy
         redirect_to events_url
     end
@@ -50,6 +42,7 @@ class EventsController < ApplicationController
     private
     
         def find_event
+            @event = Event.find(params[:id])
         end
         
         def event_params

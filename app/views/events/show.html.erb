@@ -6,7 +6,7 @@
         <h3>Month, Date, Year</h3>
         <h3><%= @event.location %></h3>
         
-        <p><button type="button" class="btn btn-lg btn-success">Register</button></p>
+        <p><%= register_link(@event) %></p>
     </div>
     
     
@@ -15,7 +15,7 @@
         <div class="container">
             <div class="col-md-4">Date: <%= @event.starts_at %></div>
             <div class="col-md-4">Location: <%= @event.location %></div>
-            <div class="col-md-4"><%= pluralize(@event.capacity, 'Ticket') %> Available</div>
+            <div class="col-md-4"><%= pluralize(@event.tickets_available, 'Ticket') %> Available</div>
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
         
         <p><%= @event.description %></p>
         
-        <button type="button" class="btn btn-lg btn-success">Register</button> &nbsp;
+        <%= register_link(@event) %> &nbsp;
         <button type="button" class="btn btn-lg btn-info"><i class="fa fa-heart-o" aria-hidden="true"></i> Save</button>
     </div>
 </div>
@@ -50,7 +50,7 @@
               <li role="presentation"><a href="#settings">Day 3</a></li>
             </ul>
             
-            <table class="table table-bordered" style="margin-top: 20px;">
+            <table class="table table-bordered center" style="margin-top: 20px;">
                 <thead >
                   <tr>
                     <th>Time</th>
@@ -168,7 +168,7 @@
         
     </div>
     <div class="" style="text-align: center; margin-top: 30px; !important">
-        <button type="button" class="btn btn-lg btn-success" style="width: 250px;">Register</button> 
+        <%= register_link(@event) %> 
     </div>
 </div>    
     
@@ -264,5 +264,8 @@
     
     <!--DELETE EVENT-->
     <%=link_to "Delete Event", event_path(@event), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-default" %>
+    
+    <!--VIEW REGISTRATIONS-->
+    <%=link_to "View Registrations", event_registrations_path(@event), class: "btn btn-default" %>
 </div>
 

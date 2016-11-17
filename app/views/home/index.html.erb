@@ -100,7 +100,7 @@
             <p style="padding: 5px;"><%= truncate(event.description, length: 140, separator: ' ') %></p>
             <div class="row" style="padding: 15px;">
                 <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>
-                <div class="col-xs-4"><button type="button" class="btn btn-lg btn-success">Register</button></div>
+                <div class="col-xs-4"><%= register_link(event) %></div>
                 <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>
             </div>
         </div>

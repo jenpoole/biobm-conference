@@ -8,9 +8,21 @@ class Event < ApplicationRecord
     
     validates :capacity, numericality: {only_integer: true, greater_than: 0}
     
+    has_many :registrations, dependent: :destroy
+    
     # Define price as free
     def free?
         price.blank? || price.zero?
+    end
+    
+    # Number of tickets available
+    def tickets_available
+        capacity - registrations.size
+    end
+    
+    # Define Sold Out
+    def sold_out?
+        tickets_available.zero?
     end
     
     # Display upcoming events

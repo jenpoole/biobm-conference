@@ -1,0 +1,29 @@
+<div class="container">
+    <h1>Register for <%= link_to @event.name, event_path(@event) %> </h1>
+    
+    <%= form_for([@event, @registration]) do |f| %>
+        
+        <%= render 'shared/errors', object: @registration %>
+    
+        <div>
+            <%= f.label :first_name, class: "control-label" %>
+            <%= f.text_field :first_name, class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :last_name, class: "control-label" %>
+            <%= f.text_field :last_name, class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.label :email, class: "control-label" %>
+            <%= f.text_field :email, class: "form-control" %>
+        </div>
+        
+        <div>
+            <%= f.submit "Register", class: "btn btn-success" %>
+            <%= link_to "Cancel", events_path, class: "btn btn-danger" %>
+        </div>
+    
+    <% end %>
+</div>
