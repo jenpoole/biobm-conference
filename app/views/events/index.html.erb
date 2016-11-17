@@ -56,7 +56,7 @@
       
       <div class="col-md-12" style="padding-top: 15px; padding-bottom: 15px;">
         <!-- # of results returned-->
-        <p><strong><%= @events.size %> Results</strong></p>
+        <p><strong><%= pluralize(@events.size, 'Result') %></strong></p>
         
         <!--display selected filters-->
         <p><strong>Filters:</strong> None, location, date, etc. </p>
@@ -69,15 +69,18 @@
                 
                 <!--Event Title-->
                 <h3><%= event.name %></h3>
+                
                 <!--Event Location-->
                 <p><%= event.location %></p>
                 
                 <!--Event Price-->
-                <!--<p><%= number_to_currency(event.price) %></p>-->
+                <p><%= format_price(event) %></p>
+                
+                <!--Event Date-->
+                <p><%= event.starts_at %></p>
                 
                 <!--Event Description-->
-                <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
+                <p style="padding: 5px;"><%= truncate(event.description, length: 140, separator: ' ') %></p>
                 
                 <!--Save Event, Register for Event, Contact Organizer-->
                 <div class="row" style="padding: 15px;">
