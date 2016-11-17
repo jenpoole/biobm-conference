@@ -45,7 +45,7 @@
 
 <!-------------QUICK SEARCH--------------------->
 
-<div class="" style="padding-top: 25px; padding-bottom: 15px; padding-left: 15px; margin-bottom: 50px; background: #007CC3;">
+<div class="" style="padding-top: 25px; padding-bottom: 15px; margin-bottom: 50px; background: #007CC3;">
     
         <div class="col-md-2" style="border-right: 2px solid black; background: #007CC3;">
             <p>Find <br> Event or Conference</p>
@@ -88,47 +88,61 @@
     </div> <!-- .container -->
 </div>
 
+
+<!--Upcoming-->
 <div class="" style="padding-bottom: 20px;">
     <div class="container">
+      <% @events.limit(9).upcoming.each do |event| %>
         <div class="col-md-4" style="text-align: center; margin-bottom: 20px;">
             <img src="img1.jpg" alt="" style="width: 100%;">
             
-            <h3>Event Title</h3>
-            <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
-            <div class="row" style="padding: 15px;">
-              
-                <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>
-                <div class="col-xs-4"><button type="button" class="btn btn-lg btn-success">Register</button></div>
-                <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>
-            </div>
-        </div>
-        
-        <div class="col-md-4" style="text-align: center; margin-bottom: 20px;">
-            <img src="img1.jpg" alt="" style="width: 100%;">
-            
-            <h3>Event Title</h3>
-            <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
+            <h3><%= link_to event.name, event_path(event) %></h3>
+            <p style="padding: 5px;"><%= truncate(event.description, length: 140, separator: ' ') %></p>
             <div class="row" style="padding: 15px;">
                 <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>
                 <div class="col-xs-4"><button type="button" class="btn btn-lg btn-success">Register</button></div>
                 <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>
             </div>
         </div>
-        
-        <div class="col-md-4" style="text-align: center; margin-bottom: 20px;">
-            <img src="img1.jpg" alt="" style="width: 100%;">
-            
-            <h3>Event Title</h3>
-            <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>
-            <div class="row" style="padding: 15px;">
-                <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>
-                <div class="col-xs-4"><button type="button" class="btn btn-lg btn-success">Register</button></div>
-                <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>
-            </div>
-        </div>
-        
+      <% end %>  
     </div>
 </div>
+
+<!--Popular-->
+<!--<div class="" style="padding-bottom: 20px;">-->
+<!--    <div class="container">-->
+<!--        <div class="col-md-4" style="text-align: center; margin-bottom: 20px;">-->
+<!--            <img src="img1.jpg" alt="" style="width: 100%;">-->
+            
+<!--            <h3>Event Title</h3>-->
+<!--            <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
+<!--            sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>-->
+<!--            <div class="row" style="padding: 15px;">-->
+              
+<!--                <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>-->
+<!--                <div class="col-xs-4"><button type="button" class="btn btn-lg btn-success">Register</button></div>-->
+<!--                <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+<!--Saved-->
+<!--<div class="" style="padding-bottom: 20px;">-->
+<!--    <div class="container">-->
+<!--        <div class="col-md-4" style="text-align: center; margin-bottom: 20px;">-->
+<!--            <img src="img1.jpg" alt="" style="width: 100%;">-->
+            
+<!--            <h3>Event Title</h3>-->
+<!--            <p style="padding: 5px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
+<!--            sed diam nonummy nibh euismod tincidunt ut laoreet dolore... </p>-->
+<!--            <div class="row" style="padding: 15px;">-->
+              
+<!--                <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>-->
+<!--                <div class="col-xs-4"><button type="button" class="btn btn-lg btn-success">Register</button></div>-->
+<!--                <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
