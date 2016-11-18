@@ -71,6 +71,10 @@ img {
     }
 }
 
+.btn-wide {
+    width: 100%;
+}
+
 .border-box {
     border: 1px solid black; 
     margin-right: 15px;
@@ -91,4 +95,22 @@ form {
 }
 .pad15 {
     padding: 15px;
+}
+
+
+@media (max-width: 915px) {
+    .quick-info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .event-schedule-section {
+        max-width: 100% !important;
+    }
+    .register-section {
+        .btn-lg {
+            width: 100%;
+        }
+    }
 }
