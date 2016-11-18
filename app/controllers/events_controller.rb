@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
     # Find event before actions
-    before_action :find_event, only: [:show, :edit, :update, :destroy]
+    before_action :set_event, only: [:show, :edit, :update, :destroy]
     
     def index
         @events = Event.all
@@ -41,7 +41,7 @@ class EventsController < ApplicationController
     
     private
     
-        def find_event
+        def set_event
             @event = Event.find(params[:id])
         end
         
