@@ -11,6 +11,14 @@ body {
     text-align: center;
 }
 
+.center {
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
 .navbar {
     margin-bottom: 0;
 }
@@ -20,17 +28,67 @@ body {
 }
 
 .jumbotron {
+    position: relative;
     text-align: center;
     margin-bottom: 0;
     height: 400px;
+    background-image: url(image_path("img1.jpg"));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+    color: #eee;
 }
 
-.center {
-    text-align: center;
+.quick-info { 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    margin-top: -25px; 
+    z-index: 100; 
+    background-color: #007CC3; 
+    width: 90%; 
+    position: absolute;
+    bottom: 0; 
+    left: 50%; 
+    transform: translate(-50%, 50%);
+}
+
+.section {
+    padding-top: 50px; 
+    padding-bottom: 50px
+}
+
+.search-section {
+    background: #007CC3; 
+    padding: 20px;
+}
+
+.register-section {
+    .btn-lg {
+        width: 450px;
+        padding: 15px;
+    }
+}
+
+.border-box {
+    border: 1px solid black; 
+    margin-right: 15px;
+    height: 320px;
+}
+
+.event-listing {
+    margin-bottom: 20px;
 }
 
 form {
     div {
         margin-bottom: 10px;
     }
+}
+.pad5 {
+    padding: 5px;
+}
+.pad15 {
+    padding: 15px;
 }

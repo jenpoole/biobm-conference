@@ -8,7 +8,7 @@
 
 <!-------------CAROUSEL--------------------->
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="carousel-example-generic" class="carousel slide center" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
@@ -19,7 +19,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="img1.jpg" alt="">
+      <img src="" alt="featured event image">
       <div class="carousel-caption">
         <h1>Event Title</h1>
         <h3>Month, Date, Year | Location</h3>
@@ -45,39 +45,16 @@
 
 <!-------------QUICK SEARCH--------------------->
 
-<div class="" style="padding-top: 25px; padding-bottom: 15px; margin-bottom: 50px; background: #007CC3;">
-    
-        <div class="col-md-2" style="border-right: 2px solid black; background: #007CC3;">
-            <p>Find <br> Event or Conference</p>
-        </div>
-        
-        <div class="col-md-10" style="padding-top: 10px; padding-bottom: 11px; background: #007CC3;">
-            <form class="form-inline">
-              
-              <div class="form-group">
-                <label for="event-type"></label>
-                <input type="text" class="form-control" id="event-type" placeholder="keyword">
-              </div>
-              
-              <div class="form-group">
-                <label for="location"></label>
-                <input type="text" class="form-control" id="location" placeholder="location">
-              </div>
-              
-              <div class="form-group">
-                <label for="date"></label>
-                <input type="text" class="form-control" id="date" placeholder="date">
-              </div>
-         
-              <button type="submit" class="btn btn-default">Find Event</button>
-            </form>
-        </div>
-    
+<div class="search-section">
+  <div class="container">
+    <h3 class="col-md-12">Find an Event or Conference</h3>
+    <%= render 'events/quick_search' %>
+  </div>
 </div>
 
 <!-------------FEATURED EVENTS / POPULAR EVENTS--------------------->
 
-<div class="" style="padding-top: 25px; padding-bottom: 25px">
+<div class="section">
     <div class="container">
         <ul class="nav nav-pills nav-justified">
           <li role="presentation" class="active"><a href="#profile">Upcoming Events</a></li>
@@ -90,18 +67,18 @@
 
 
 <!--Upcoming-->
-<div class="" style="padding-bottom: 20px;">
+<div class="">
     <div class="container">
       <% @events.limit(9).upcoming.each do |event| %>
-        <div class="col-md-4" style="text-align: center; margin-bottom: 20px;">
-            <img src="img1.jpg" alt="" style="width: 100%;">
+        <div class="col-md-4 center event-listing">
+            <%= image_tag("img1.jpg") %>
             
             <h3><%= link_to event.name, event_path(event) %></h3>
-            <p style="padding: 5px;"><%= truncate(event.description, length: 140, separator: ' ') %></p>
-            <div class="row" style="padding: 15px;">
-                <div class="col-xs-4"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>
-                <div class="col-xs-4"><%= register_link(event) %></div>
-                <div class="col-xs-4"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>
+            <p class="pad5"><%= truncate(event.description, length: 140, separator: ' ') %></p>
+            <div class="row pad15">
+                <div class="col-xs-2"><i class="fa fa-heart-o fa-2x" aria-hidden="true"></i></div>
+                <div class="col-xs-8"><%= register_link(event) %></div>
+                <div class="col-xs-2"><i class="fa fa-envelope-o fa-2x" aria-hidden="true"></i></div>
             </div>
         </div>
       <% end %>  

@@ -1,0 +1,27 @@
+<%= form_tag events_path, method: :get do %>
+    
+    <!--Keyword Search-->
+    <div class="col-md-3">
+        <%= text_field_tag :q, "", placeholder: "Keyword", class: "form-control" %>
+    </div>
+    
+    <!--Search by Date Range-->
+    <div class="col-md-3">
+        <div class="input-group input-daterange date">
+        <%= text_field_tag "search[starts_at_start]", "", class: "form-control", placeholder: "Start date" %>
+        <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
+        <%= text_field_tag "search[starts_at_end]", "", class: "form-control", placeholder: "End date" %>
+        </div>
+    </div>
+    
+    <!--Search by Location-->
+    <div class="col-md-3">
+        <%= text_field_tag "search[location]", "", class: "form-control", placeholder: "Location" %>
+    </div>
+    
+    <!--Submit Search-->
+    <div class="col-md-3">
+        <%= button_tag "Search", class: "btn btn-success" %>
+    </div>
+
+<% end %>
