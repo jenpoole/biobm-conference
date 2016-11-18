@@ -34,12 +34,12 @@
     
     
     <div class="">
-        <div class="col-md-10">
+        <div class="col-md-9">
            <%= f.label :image, "Image", class: "control-label" %> <br>
            <%= f.file_field :image, accept: "image/jpeg, image/gif, image/png", class: "form-control" %> 
         </div>
         
-        <div class="col-md-2"><%= image_tag(@event.image.url, size: "") if @event.image? %></div>
+        <div class="col-md-3"><%= image_tag(@event.image.url, size: "") if @event.image? %></div>
     </div>
     
     <div class="col-md-12">
@@ -48,3 +48,13 @@
     </div>
 
 <% end %>
+
+
+<script>
+  $('#event_image').bind('change'), function(){
+      size_in_megabytes = this.files[0].size/1024/1024;
+      if (size_in_megabytes) > 5 {
+        alert('Maximum file size is 5MB. Please choose a smaller file.');
+      }
+  });    
+</script>
