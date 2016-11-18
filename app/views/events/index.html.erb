@@ -25,8 +25,12 @@
         <% @events.upcoming.each do |event| %>
             <div class="col-md-4 center event-listing">
                 <!--Event Image-->
-                <%= image_tag("img1.jpg") %>
-                
+                <% if event.image? %>
+                  <%= image_tag(event.image.url, size: "350x180") %>
+                <% else %>
+                  <%= image_tag("default_event_img.jpg") %>
+                <% end %>
+      
                 <!--Event Title-->
                 <h3><%= link_to event.name, event_path(event) %></h3>
                 
