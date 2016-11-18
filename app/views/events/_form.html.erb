@@ -22,9 +22,10 @@
         <%= f.number_field :price, class: "form-control" %>
     </div>
 
-    <div>
-        <%= f.label :starts_at, class: "control-label" %> <br>
-        <%= f.datetime_select :starts_at, class: "form-control" %>
+    <p><strong>Date & Time</strong></p>
+    <div class="input-group date col-md-12" id="datetimepicker1">
+        <%= f.text_field :starts_at, class: "form-control" %>
+        <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
     </div>
     
     <div>
@@ -38,3 +39,9 @@
     </div>
 
 <% end %>
+
+<script>
+    $(function () {
+        $('#datetimepicker1').datetimepicker();
+    });
+</script>
