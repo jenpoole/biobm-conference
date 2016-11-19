@@ -25,14 +25,14 @@ class Event < ApplicationRecord
         price.blank? || price.zero?
     end
     
-    # Number of tickets available
-    def tickets_available
+    # Number of spots available 
+    def spots_available
         capacity - registrations.size
     end
     
     # Define Sold Out
     def sold_out?
-        tickets_available.zero?
+        spots_available.zero?
     end
     
     # Display upcoming events

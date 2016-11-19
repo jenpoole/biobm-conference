@@ -13,7 +13,7 @@
         <div class="container">
             <div class="col-md-4">Date: <%= @event.starts_at %></div>
             <div class="col-md-4">Location: <%= @event.location %></div>
-            <div class="col-md-4"><%= pluralize(@event.tickets_available, 'Ticket') %> Available</div>
+            <div class="col-md-4"><%= pluralize(@event.spots_available, 'Spot') %> Available</div>
         </div>
     </div>
 </div>
@@ -31,7 +31,7 @@
         <div class="container">
             <div class="col-md-4">Date: <%= @event.starts_at %></div>
             <div class="col-md-4">Location: <%= @event.location %></div>
-            <div class="col-md-4"><%= pluralize(@event.tickets_available, 'Ticket') %> Available</div>
+            <div class="col-md-4"><%= pluralize(@event.spots_available, 'Spot') %> Available</div>
         </div>
     </div>
 </div>
@@ -213,12 +213,12 @@
     <div class="container center">
         <h1 style="text-align: center; margin-bottom: 30px;">Sponsors</h1>
         
-        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-2"><i class="fa fa-y-combinator fa-5x" aria-hidden="true"></i></div>
+        <div class="col-xs-2"><%= image_tag("company_logo.png") %></div>
+        <div class="col-xs-2"><%= image_tag("company_logo.png") %></div>
+        <div class="col-xs-2"><%= image_tag("company_logo.png") %></div>
+        <div class="col-xs-2"><%= image_tag("company_logo.png") %></div>
+        <div class="col-xs-2"><%= image_tag("company_logo.png") %></div>
+        <div class="col-xs-2"><%= image_tag("company_logo.png") %></div>
     </div>
     
     <div class="center section">

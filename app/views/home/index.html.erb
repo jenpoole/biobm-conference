@@ -8,40 +8,47 @@
 
 <!-------------CAROUSEL--------------------->
 
-<div id="carousel-example-generic" class="carousel slide center" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="" alt="featured event image">
-      <div class="carousel-caption">
-        <h1>Event Title</h1>
-        <h3>Month, Date, Year | Location</h3>
-        <p>Countdown to Event date</p>
-        
-        <button type="button" class="btn btn-info">Register Now</button> &nbsp;
-        <button type="button" class="btn btn-info">View Details</button>
+      <%= image_tag("featured_event_bg.jpg", class: "carousel-img") %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Featured Event</h1>
+          <br>
+          <p><button type="button" class="btn btn-success">Join Event</button> &nbsp; <button type="button" class="btn btn-default">View Details</button></p>
+        </div>
       </div>
     </div>
-    
+
+    <div class="item">
+      <%= image_tag("company_ad_bg.jpg", class: "carousel-img") %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Company Advertisement</h1>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
+
 
 <!-------------QUICK SEARCH--------------------->
 

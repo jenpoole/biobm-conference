@@ -23,8 +23,21 @@ img {
     margin-bottom: 0;
 }
 
-#carousel-example-generic {
-    height: 350px;
+#myCarousel {
+    height: 400px;
+    
+    .carousel-inner {
+        position: relative;
+        .carousel-img {
+            height: 400px;
+        }
+    }
+    .carousel-caption {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .jumbotron {
@@ -36,7 +49,7 @@ img {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     background-blend-mode: multiply;
     color: #eee;
     
