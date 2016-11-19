@@ -1,4 +1,9 @@
+require "elasticsearch/model"
+
 class Event < ApplicationRecord
+    
+    include Elasticsearch::Model
+    include Elasticsearch::Model::Callbacks
     
     validates :name, :location, presence: true
     
@@ -48,3 +53,5 @@ class Event < ApplicationRecord
             end
         end
 end
+
+Event.__elasticsearch__.create_index!

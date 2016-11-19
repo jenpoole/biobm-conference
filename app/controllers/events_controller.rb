@@ -3,7 +3,14 @@ class EventsController < ApplicationController
     before_action :set_event, only: [:show, :edit, :update, :destroy]
     
     def index
-        @events = Event.all
+        # Determine presence of search parameters
+        @events = if params[:q].present? || params[:search] && ( params[:search][:location].present? || params[:search][:starts_at_start].present? || params[:search][:starts_at_end].present? )
+          # list results based on search parameters
+          ElasticSearcher.new.call(params).events
+        else
+          # list all events if no search parameters
+          Event.page(params[:page] || 1).per(15).all
+        end  
     end
     
     def show

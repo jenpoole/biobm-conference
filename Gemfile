@@ -18,6 +18,13 @@ gem "font-awesome-rails"
 gem 'momentjs-rails'
 gem 'bootstrap3-datetimepicker-rails'
 
+gem 'bootstrap-datepicker-rails'
+gem 'kaminari'
+gem 'bootstrap-kaminari-views'
+
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+
 gem 'mini_magick'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
