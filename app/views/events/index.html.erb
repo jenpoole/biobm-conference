@@ -19,7 +19,7 @@
         <p><strong><%= pluralize(@events.upcoming.size, 'Result') %></strong></p>
         
         <!--display selected filters-->
-        <p><strong>Filters:</strong> None, location, date, etc. </p>
+        <!--<p><strong>Filters:</strong> None, location, date, etc. </p>-->
       </div>
       
         <% @events.upcoming.each do |event| %>
@@ -36,9 +36,6 @@
                 
                 <!--Event Location-->
                 <p><%= event.location %></p>
-                
-                <!--Event Price-->
-                <p><%= format_price(event) %></p>
                 
                 <!--Event Date-->
                 <p><%= event.starts_at %></p>

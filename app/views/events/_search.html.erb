@@ -5,17 +5,22 @@
         <%= text_field_tag :q, "", placeholder: "Keyword", class: "form-control" %>
     </div>
     
-    <!--Search by Location-->
+     <!--General Location Search-->
     <div class="col-md-4">
-        <%= text_field_tag "search[location]", "", class: "form-control", placeholder: "Location ie 'boston' or 'ny' " %>
+        <%= text_field_tag :q, "", placeholder: "General Location Search", class: "form-control" %>
     </div>
+    
+    <!--Search by Location-->
+    <!--<div class="col-md-4">-->
+    <!--    <%= text_field_tag "search[location]", "", class: "form-control", placeholder: "Location ie 'boston' or 'ny' " %>-->
+    <!--</div>-->
     
     <!--Search by Date Range-->
     <div class="col-md-4">
         <div class="input-group input-daterange date">
-        <%= text_field_tag "search[starts_at_start]", "", class: "form-control", placeholder: "Start date" %>
+        <%= text_field_tag "search[starts_at_start]", "", class: "form-control", placeholder: "From date" %>
         <span class="input-group-addon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-        <%= text_field_tag "search[starts_at_end]", "", class: "form-control", placeholder: "End date" %>
+        <%= text_field_tag "search[starts_at_end]", "", class: "form-control", placeholder: "To date" %>
         </div>
     </div>
     

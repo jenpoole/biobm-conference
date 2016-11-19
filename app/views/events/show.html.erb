@@ -70,7 +70,7 @@
             
             <table class="table table-bordered center" style="margin-top: 20px;">
                 <thead>
-                  <tr >
+                  <tr>
                     <th class="center">Time</th>
                     <th class="center">Title</th>
                     <!--<th>Exhibitor</th>-->
@@ -110,36 +110,36 @@
    
     
 <!-------------SPEAKERS / EXHIBITORS--------------------->
-<div class="section">
-    <div class="container">
-        <h1 class="center" style="margin-bottom: 30px;">Exhibitors</h1>
+<!--<div class="section">-->
+<!--    <div class="container">-->
+<!--        <h1 class="center" style="margin-bottom: 30px;">Exhibitors</h1>-->
         
-        <div class="col-md-4">
-            <p class="center"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+<!--        <div class="col-md-4">-->
+<!--            <p class="center"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>-->
             
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<!--            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
+<!--            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>-->
             
-        </div>
+<!--        </div>-->
         
-        <div class="col-md-4">
-            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+<!--        <div class="col-md-4">-->
+<!--            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>-->
             
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<!--            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
+<!--            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>-->
             
-        </div>
+<!--        </div>-->
         
-        <div class="col-md-4">
-            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>
+<!--        <div class="col-md-4">-->
+<!--            <p style="text-align: center;"><i class="fa fa-user fa-5x" aria-hidden="true" style="margin-bottom: 10px;"></i></p>-->
             
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>
+<!--            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit,-->
+<!--            sed diam nonummy nibh euismod tincidunt ut laoreet dolore.</p>-->
             
-        </div>
+<!--        </div>-->
         
-    </div>
-</div>
+<!--    </div>-->
+<!--</div>-->
     
     
 <!-------------PRICING--------------------->
@@ -150,7 +150,12 @@
         <div class="col-md-4">
             <p class="center"><i class="fa fa-usd fa-4x" aria-hidden="true"></i></p>
             
-            <p class="center"><strong>Tier 1</strong></p>
+            <p class="center">
+                <strong>Tier 1:  
+                <!--Event Price-->
+                <%= format_price(@event) %>
+                </strong>
+            </p>
             
             <ul>
                 <li>Lorem ipsum dolor sit amet</li>
@@ -162,7 +167,12 @@
         <div class="col-md-4">
             <p class="center"><i class="fa fa-usd fa-4x" aria-hidden="true"></i></p>
             
-            <p class="center"><strong>Tier 2</strong></p>
+            <p class="center">
+                <strong>Tier 1:  
+                <!--Event Price-->
+                <%= format_price(@event) %>
+                </strong>
+            </p>
             
             <ul>
                 <li>Lorem ipsum dolor sit amet</li>
@@ -174,7 +184,12 @@
         <div class="col-md-4">
             <p class="center"><i class="fa fa-usd fa-4x" aria-hidden="true"></i></p>
             
-            <p class="center"><strong>Tier 3</strong></p>
+            <p class="center">
+                <strong>Tier 1:  
+                <!--Event Price-->
+                <%= format_price(@event) %>
+                </strong>
+            </p>
             
             <ul>
                 <li>Lorem ipsum dolor sit amet</li>

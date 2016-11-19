@@ -44,6 +44,10 @@ class Event < ApplicationRecord
     def self.popular
     end
     
+    # Define event_ended
+    def event_ended?
+    end
+    
     
     private
     
