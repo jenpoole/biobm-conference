@@ -28,6 +28,8 @@ gem 'elasticsearch-rails'
 gem 'mini_magick'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
 
+gem 'devise'
+
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
