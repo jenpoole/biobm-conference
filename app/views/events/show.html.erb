@@ -1,16 +1,14 @@
 <!-------------JUMBOTRON--------------------->
-    
+
+<% if @event.image? %>
+ 
 <div class="jumbotron" style="background-image: url(<%= @event.image %>);">
     <div class="container">
         <h1><%= @event.name %></h1>
-        <!--<h3>Month, Date, Year</h3>-->
-        <!--<h3><%= @event.location %></h3>-->
         
         <p><%= register_link(@event) %></p>
     </div>
     
-    
-    <!-------------QUICK EVENT INFO--------------------->
     <div class="center quick-info">
         <div class="container">
             <div class="col-md-4">Date: <%= @event.starts_at %></div>
@@ -19,6 +17,26 @@
         </div>
     </div>
 </div>
+
+<% else %>
+
+<div class="jumbotron" style="background-image: url(<%= image_path 'default_event_img.jpg' %>)">
+    <div class="container">
+        <h1><%= @event.name %></h1>
+        
+        <p><%= register_link(@event) %></p>
+    </div>
+    
+    <div class="center quick-info">
+        <div class="container">
+            <div class="col-md-4">Date: <%= @event.starts_at %></div>
+            <div class="col-md-4">Location: <%= @event.location %></div>
+            <div class="col-md-4"><%= pluralize(@event.tickets_available, 'Ticket') %> Available</div>
+        </div>
+    </div>
+</div>
+
+<% end %>
     
     
 <!-------------FULL EVENT INFO--------------------->
@@ -51,37 +69,37 @@
             </ul>
             
             <table class="table table-bordered center" style="margin-top: 20px;">
-                <thead >
-                  <tr>
-                    <th>Time</th>
-                    <th>Title</th>
-                    <th>Exhibitor</th>
-                    <th>Venue</th>
+                <thead>
+                  <tr >
+                    <th class="center">Time</th>
+                    <th class="center">Title</th>
+                    <!--<th>Exhibitor</th>-->
+                    <th class="center">Venue</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td>10:00 AM</td>
                     <td>Event Title</td>
-                    <td>Exhibitor</td>
+                    <!--<td>Exhibitor</td>-->
                     <td>Location</td>
                   </tr>
                   <tr>
                     <td>11:00 AM</td>
                     <td>Event Title</td>
-                    <td>Exhibitor</td>
+                    <!--<td>Exhibitor</td>-->
                     <td>Location</td>
                   </tr>
                   <tr>
                     <td>1:00 PM</td>
                     <td>Event Title</td>
-                    <td>Exhibitor</td>
+                    <!--<td>Exhibitor</td>-->
                     <td>Location</td>
                   </tr>
                   <tr>
                     <td>2:00 PM</td>
                     <td>Event Title</td>
-                    <td>Exhibitor</td>
+                    <!--<td>Exhibitor</td>-->
                     <td>Location</td>
                   </tr>
                 </tbody>
