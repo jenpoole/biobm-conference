@@ -16,7 +16,7 @@
       
       <div class="col-md-12">
         <!-- # of results returned-->
-        <p><strong><%= pluralize(@events.size, 'Result') %></strong></p>
+        <p><strong><%= pluralize(@events.upcoming.size, 'Result') %></strong></p>
         
         <!--display selected filters-->
         <p><strong>Filters:</strong> None, location, date, etc. </p>
