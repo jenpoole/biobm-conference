@@ -1,0 +1,86 @@
+<!-------------PROFILE--------------------->
+
+
+<div class="section">
+  <div class="container">
+    <div class="col-md-4 center">
+      <i style="font-size: 10em;" class="fa fa-user-circle fa-5x" aria-hidden="true"></i> 
+    </div>
+    
+    <div class="col-md-4 user-profile-section">
+      <p><i class="fa fa-user" aria-hidden="true"></i> <%= @user.first_name %> <%= @user.last_name %></p>
+      <p><i class="fa fa-address-card-o" aria-hidden="true"></i> example.com</p>
+      <p><i class="fa fa-envelope-o" aria-hidden="true"></i> <%= @user.email %></p>
+      <p><i class="fa fa-linkedin" aria-hidden="true"></i> /username</p>
+      <p><i class="fa fa-facebook" aria-hidden="true"></i> /username</p>
+      <p><i class="fa fa-twitter" aria-hidden="true"></i> @username</p>
+      <p><i class="fa fa-instagram" aria-hidden="true"></i> @username</p>
+    </div>
+    
+    <div class="col-md-4 user-profile-buttons">
+      <p><%=link_to "Edit Profile", edit_user_path(@user), class: "btn btn-default" %></p>
+      
+      <p><button type="button" class="btn btn-default disabled">Notifications</button></p>
+      
+      <p><button type="button" class="btn btn-default">Create Event</button></p>
+      
+      <p><button type="button" class="btn btn-default">Manage Events</button></p>
+      
+      <p><button type="button" class="btn btn-default disabled">Manage Team</button></p>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-------------MANAGE EVENTS--------------------->
+
+<div class="" style="padding-top: 25px; padding-bottom: 25px">
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified">
+          <li role="presentation" class="active"><a href="#profile">My Registered Events</a></li>
+          <li role="presentation" class=""><a href="#messages">My Saved Events</a></li>
+        </ul>
+      
+    </div> <!-- .container -->
+</div>
+
+<div class="">
+  <div class="container">
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col-md-3">
+          <img style="width: 250px;" src="img1.jpg">
+        </div>
+    
+        <div class="col-md-6">
+          <p><strong>Event Title</strong></p>
+          <p>Event Date</p>
+          <p>Event Location</p>
+        </div>
+        
+        <div class="col-md-3">
+           <p><button style="width: 100%; margin-top: 20px;" type="button" class="btn btn-success disabled">Attending</button></p>
+        </div>
+    </div>
+    
+    <div class="row" style="margin-bottom: 15px;">
+        <div class="col-md-3">
+          <img style="width: 250px;" src="img1.jpg">
+        </div>
+    
+        <div class="col-md-6">
+          <p><strong>Event Title</strong></p>
+          <p>Event Date</p>
+          <p>Event Location</p>
+        </div>
+        
+        <div class="col-md-3">
+           <p><button style="width: 100%; margin-top: 20px;" type="button" class="btn btn-danger disabled">Event Ended</button></p>
+        </div>
+    </div>
+
+    
+    
+  </div>
+</div>

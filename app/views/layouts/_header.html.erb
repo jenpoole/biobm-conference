@@ -15,19 +15,41 @@
     <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
-           <li><%= link_to "Sign Up", new_user_registration_path %></li> 
-           <li><%= link_to "Login", new_user_session_path %></li> 
-           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li> 
+          
+          <!--------------IF SIGNED IN------------>
+          
           <li><%= link_to "Events", events_path %></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" aria-hidden="true"></i> Username
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu dropdown-menu-left">
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">Manage Events</a></li>
-              <li><%= link_to "Create Event", new_event_path %></li> 
-            </ul>
-          </li>
+          
+              <!--*****IF SIGNED IN AS CONFERENCE REP***--->
+              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" aria-hidden="true"></i> Username ConferenceRep
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><%= link_to "Profile", current_user %></li>
+                  <li><a href="#">Manage Events</a></li>
+                  <li><%= link_to "Create Event", new_event_path %></li> 
+                </ul>
+              </li>
+            
+              <!--****ELSE, SIGNED IN AS GENERAL USER****--->
+              
+              <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" aria-hidden="true"></i> Username User
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu dropdown-menu-left">
+                  <li><%= link_to "Profile", current_user %></li> 
+                </ul>
+              </li>
+          
+          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          
+          <!--------------ELSE, NOT SIGNED IN------------>
+          
+          <li><%= link_to "Login", new_user_session_path %></li>
+          
+          <!--------------END------------>
+          
         </ul>
     </div> <!-- .navbar-collapse -->
   </div>

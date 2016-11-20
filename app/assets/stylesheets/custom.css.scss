@@ -107,6 +107,12 @@ img {
     height: 430px;
 }
 
+.user-profile-buttons {
+    .btn {
+        width: 100%;
+    }
+}
+
 form {
     div {
         margin-bottom: 10px;
@@ -135,4 +141,12 @@ form {
             width: 100%;
         }
     }
+}
+
+@media (max-width: 992px) {
+  .user-profile-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
 }
