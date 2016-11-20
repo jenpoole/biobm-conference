@@ -8,9 +8,7 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
     
-    def edit
+    def manage_events
     end
     
-    def update
-    end
 end

@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'user_registrations' }
   
   # user profile page
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show]
+  
+  get "/users/:id/manage_events" => "users#manage_events", :as => :manage_events
   
   resources :events do 
       resources :registrations

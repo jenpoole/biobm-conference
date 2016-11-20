@@ -24,9 +24,9 @@
       
       <!--For conference reps only-->
       <% if current_user.conferenceRep? %>
-          <p><button type="button" class="btn btn-default">Create Event</button></p>
+          <p><%= link_to "Create Event", new_event_path, class: "btn btn-default" %></p>
           
-          <p><button type="button" class="btn btn-default">Manage Events</button></p>
+          <p><%= link_to "Manage Events", manage_events_path, class: "btn btn-default" %></p>
           
           <p><button type="button" class="btn btn-default disabled">Manage Team</button></p>
       <% end %>
