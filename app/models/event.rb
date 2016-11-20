@@ -15,6 +15,8 @@ class Event < ApplicationRecord
     
     has_many :registrations, dependent: :destroy
     
+    belongs_to :user
+    
     # Carrierwave image uploader
     mount_uploader :image, ImageUploader
     

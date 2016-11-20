@@ -1,5 +1,5 @@
 class RegistrationsController < ApplicationController
-    # Only logged in users can view
+    # Only logged in users can view event registrations
     before_action :authenticate_user!
     
     # Get event id before registration actions
