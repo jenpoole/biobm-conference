@@ -16,41 +16,55 @@
         <ul class="nav navbar-nav navbar-right">
           <li><%= link_to "Home", root_path %></li>
           
-          <!--------------IF SIGNED IN------------>
+          <!--------------LOGGED IN------------>
+          <% if user_signed_in? %>
           
-          <li><%= link_to "Events", events_path %></li>
-          
-              <!--*****IF SIGNED IN AS CONFERENCE REP***--->
-              
+            <li><%= link_to "Events", events_path %></li>
+            
+            <!--Signed in as conference rep-->
+            <% if current_user.conferenceRep? %>
+            
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" aria-hidden="true"></i> Username ConferenceRep
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left">
                   <li><%= link_to "Profile", current_user %></li>
                   <li><a href="#">Manage Events</a></li>
-                  <li><%= link_to "Create Event", new_event_path %></li> 
+                  <li><%= link_to "Create Event", new_event_path %></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
             
-              <!--****ELSE, SIGNED IN AS GENERAL USER****--->
-              
+            <!--Signed in as general user-->
+            <% else %>
+            
               <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user" aria-hidden="true"></i> Username User
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-left">
-                  <li><%= link_to "Profile", current_user %></li> 
+                  <li><%= link_to "Profile", current_user %></li>
+                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
                 </ul>
               </li>
+            
+            <% end %> <!-- End (signed in as conference rep or general user) -->
           
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <!--NOT LOGGED IN-->
+          <% else %>
           
-          <!--------------ELSE, NOT SIGNED IN------------>
-          
-          <li><%= link_to "Login", new_user_session_path %></li>
-          
-          <!--------------END------------>
+            <li><%= link_to "Login", new_user_session_path %></li>
+            
+          <% end %> <!-- End (user signed in) -->
           
         </ul>
     </div> <!-- .navbar-collapse -->
   </div>
 </nav>
+
+
+
+
+                
+                
+            
+            
