@@ -46,11 +46,6 @@ class Event < ApplicationRecord
     def self.popular
     end
     
-    # Display only signed-in user's events
-    def self.by_current_user
-        where(user_id: current_user)
-    end
-    
     # Define event_ended
     def event_ended?
     end
