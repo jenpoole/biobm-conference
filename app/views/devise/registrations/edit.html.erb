@@ -1,43 +1,77 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container">
+
+<h1><%= current_user.first_name %> <%= current_user.last_name %>: Edit Profile</h1>
+
+<br>
+
+<form>
+  <fieldset>
+    <legend>Profile Info</legend>
+    
+    <ul>
+      <li>Profile Pic</li>
+      <li>Name</li>
+      <li>Website</li>
+      <li>Email</li>
+      <li>Linked In</li>
+      <li>Facebook</li>
+      <li>Twitter</li>
+      <li>Instagram</li>
+    </ul>
+  </fieldset>
+</form>
+
+<br>
+
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+  <fieldset>
+    <legend>Account Info</legend>
+  
+    <div class="">
+      <%= f.label :email, class: "control-label" %><br />
+      <%= f.email_field :email, class: "form-control", autofocus: false %>
+    </div>
+  
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+  
+    <div class="">
+      <%= f.label :password, "New Password", class: "control-label" %> <i>(leave blank if you don't want to change it)</i>
+      <%= f.password_field :password, class: "form-control", autocomplete: "off" %>
+      <% if @minimum_password_length %>
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
+  
+    <div class="">
+      <%= f.label :password_confirmation, "New Password Confirmation", class: "control-label" %><br />
+      <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
+    </div>
+  
+    <div class="">
+      <%= f.label :current_password, class: "control-label" %> <i>(we need your current password to confirm your changes)</i>
+      <%= f.password_field :current_password, class: "form-control", autocomplete: "off" %>
+    </div>
+  
+    <div class="">
+      <%= f.submit "Update", class: "btn btn-success" %>
+    </div>
+  </fieldset>  <!-- Account Info -->
 <% end %>
 
-<h3>Cancel my account</h3>
+<br> 
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+<p><%= link_to "Return to Profile", current_user %></p>
 
-<%= link_to "Back", :back %>
+
+
+<!--<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-sm btn-danger" %></p>-->
+
+
+<!--<%= link_to "Back", :back, class: "btn btn-default" %>-->
+
+</div>
