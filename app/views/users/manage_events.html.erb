@@ -1,6 +1,10 @@
 
 <div class="container">
-    <h1>Manage Events</h1>
+    <h1>Manage Events </h1>
+    
+    <br>
+    
+    <p><%= link_to "Create Event", new_event_path, class: "btn btn-default" %></p>
     
     <table class="table">
     <thead>
@@ -17,9 +21,11 @@
         <td><%= link_to event.name, event_path(event) %></td>
         <td><%= event.starts_at %></td>
         <td><%= event.location %></td>
-        <td><%=link_to "Edit Event", edit_event_path(event), class: "btn btn-sm btn-default" %></td>
-        <td><%=link_to "Delete Event", event_path(event), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-default" %></td>
-        <td><%=link_to "View Registrations", event_registrations_path(event), class: "btn btn-sm btn-default" %></td>
+        <td class="manage-actions">
+            <%=link_to "Edit Event", edit_event_path(event), class: "btn btn-sm btn-default" %>
+            <%=link_to "Delete Event", event_path(event), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-sm btn-default" %>
+            <%=link_to "View Registrations", event_registrations_path(event), class: "btn btn-sm btn-default" %>
+        </td>    
       </tr>
       <% end %>
     </tbody>
