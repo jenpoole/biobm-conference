@@ -16,11 +16,6 @@
   </div>
   
   <div class="field">
-    <%= f.label :country, "Country", class: "control-label" %><br />
-    <%= f.text_field :country, class: "form-control" %>
-  </div>
-  
-  <div class="field">
     <%= f.label :company, "Company", class: "control-label" %><br />
     <%= f.text_field :company, class: "form-control" %>
   </div>
@@ -28,6 +23,11 @@
   <div class="field">
     <%= f.label :email, "Company Email", class: "control-label" %><br />
     <%= f.email_field :email, class: "form-control"%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :country, "Country", class: "control-label" %><br />
+    <%= f.text_field :country, class: "form-control" %>
   </div>
 
   <div class="field">
@@ -43,9 +43,9 @@
     <%= f.password_field :password_confirmation, class: "form-control", autocomplete: "off" %>
   </div>
   
-  <div class="field">
-    <%= f.label :join_email_list, "Join Email List...", class: "control-label" %><br />
-    <%= f.text_field :join_email_list, class: "form-control" %>
+  <div>
+      <%= f.label :join_email_list, "Join our email list to receive notifications about upcoming events?", class: "control-label" %> <br>
+      <%= f.select :join_email_list, User::JOIN_EMAIL_LIST_OPTIONS, class: "form-control" %>
   </div>
 
   <div class="actions">
