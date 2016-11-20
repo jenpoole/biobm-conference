@@ -22,11 +22,14 @@
       
       <p><button type="button" class="btn btn-default disabled">Notifications</button></p>
       
-      <p><button type="button" class="btn btn-default">Create Event</button></p>
-      
-      <p><button type="button" class="btn btn-default">Manage Events</button></p>
-      
-      <p><button type="button" class="btn btn-default disabled">Manage Team</button></p>
+      <!--For conference reps only-->
+      <% if current_user.conferenceRep? %>
+          <p><button type="button" class="btn btn-default">Create Event</button></p>
+          
+          <p><button type="button" class="btn btn-default">Manage Events</button></p>
+          
+          <p><button type="button" class="btn btn-default disabled">Manage Team</button></p>
+      <% end %>
 
     </div>
   </div>
@@ -50,7 +53,7 @@
   <div class="container">
     <div class="row" style="margin-bottom: 15px;">
         <div class="col-md-3">
-          <img style="width: 250px;" src="img1.jpg">
+          <%= image_tag("default_event_img.jpg") %>
         </div>
     
         <div class="col-md-6">
@@ -66,7 +69,7 @@
     
     <div class="row" style="margin-bottom: 15px;">
         <div class="col-md-3">
-          <img style="width: 250px;" src="img1.jpg">
+          <%= image_tag("default_event_img.jpg") %>
         </div>
     
         <div class="col-md-6">
