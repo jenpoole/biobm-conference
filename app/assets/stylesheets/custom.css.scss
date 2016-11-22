@@ -69,6 +69,7 @@ img {
     bottom: 0; 
     left: 50%; 
     transform: translate(-50%, 50%);
+    // background: #31708f;
 }
 
 .section {
@@ -93,6 +94,7 @@ img {
 }
 
 .border-box {
+    background: #a3b4c3;
     border: 1px solid black; 
     margin-right: 15px;
     height: 320px;
@@ -123,6 +125,24 @@ form {
 }
 .pad15 {
     padding: 15px;
+}
+
+.pricing-section {
+    // background: TBD;
+}
+
+.media-and-contact-section {
+    background: #d9e1e8;
+}
+
+.upcoming-and-subscribe-section {
+    background: #d9e1e8;
+}
+
+footer {
+    background-color: #282c37;
+    color: #ccc;
+    padding: 50px;
 }
 
 
