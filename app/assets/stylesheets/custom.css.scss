@@ -2,6 +2,8 @@
 @import "bootstrap";
 @import "font-awesome";
 
+// GENERAL 
+
 body {
     font-size: 16px;
 }
@@ -19,9 +21,89 @@ img {
     width: 100%;
 }
 
+form {
+    div {
+        margin-bottom: 10px;
+    }
+}
+
+// NAVIGATION 
+
 .navbar {
     margin-bottom: 0;
 }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    background-color: #31b0d5;
+}
+
+// BUTTONS 
+
+.btn-wide {
+    width: 100%;
+}
+
+.btn-success {
+    background: #379392;
+    border-color: #379392;
+}
+
+.btn-success:hover, 
+.btn-success:focus, 
+.btn-success:active.focus, 
+.btn-success.active:hover, 
+.btn-success.active:focus, 
+.btn-success.active.focus, 
+.open > .btn-success.dropdown-toggle:hover, 
+.open > .btn-success.dropdown-toggle:focus, 
+.open > .btn-success.dropdown-toggle.focus {
+    background: #18c2c0 !important;
+    border-color: #18c2c0 !important;
+}
+
+.btn-danger {
+    // background: #881600;
+    // border-color: #881600;
+}
+
+// SECTIONS
+
+.section {
+    padding-top: 50px; 
+    padding-bottom: 50px
+}
+
+.search-section { 
+    padding: 20px;
+    background-color: #003f63;
+    color: #fff;
+}
+
+.event-listing {
+    margin-bottom: 20px;
+    height: 500px;
+}
+
+.event-listing-feature {
+    height: 500px;
+}
+
+.user-profile-buttons {
+    .btn {
+        width: 100%;
+    }
+}
+
+// PADDING 
+
+.pad5 {
+    padding: 5px;
+}
+.pad15 {
+    padding: 15px;
+}
+
+// HOMEPAGE
 
 #myCarousel {
     height: 400px;
@@ -39,6 +121,8 @@ img {
         transform: translate(-50%, -50%);
     }
 }
+
+// EVENTS
 
 .jumbotron {
     position: relative;
@@ -69,17 +153,23 @@ img {
     bottom: 0; 
     left: 50%; 
     transform: translate(-50%, 50%);
-    // background: #31708f;
+    background-color: #003f63;
 }
 
-.section {
-    padding-top: 50px; 
-    padding-bottom: 50px
+.event-schedule-section {
+    width: 550px; 
+    margin-top: 30px;
 }
 
-.search-section {
-    background: #007CC3; 
-    padding: 20px;
+.pricing-section {
+    background-image: url(image_path("parallax-bg.jpg"));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    color: #fff;
 }
 
 .register-section {
@@ -89,82 +179,54 @@ img {
     }
 }
 
-.btn-wide {
-    width: 100%;
+.media-and-contact-section {
+    background-image: url(image_path("parallax-bg-2.jpg"));
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .5);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    color: #fff;
 }
 
 .border-box {
-    // background: #a3b4c3;
-    border: 1px solid black; 
+    padding: 15px; 
+    border: 2px solid #a3b4c3;
     margin-right: 15px;
     height: 320px;
 }
 
-.event-listing {
-    margin-bottom: 20px;
-    height: 500px;
-}
-
-.event-listing-feature {
-    height: 500px;
-}
-
-.user-profile-buttons {
-    .btn {
-        width: 100%;
-    }
-}
-
-form {
-    div {
-        margin-bottom: 10px;
-    }
-}
-.pad5 {
-    padding: 5px;
-}
-.pad15 {
-    padding: 15px;
-}
-
-.pricing-section {
-    // background: TBD;
-}
-
-.media-and-contact-section {
-    // background: #d9e1e8;
+.map-section {
+    height: 400px;
 }
 
 .upcoming-and-subscribe-section {
-    background: #d9e1e8;
+    background-color: #003f63;
+    color: #fff;
 }
+
+// FOOTER
 
 footer {
-    // background-color: #282c37;
+    background-color: #002f49;
     color: #ccc;
-    padding: 50px;
-    background-color: #003f63;
+    padding: 30px 50px;
 }
 
-
-@media (max-width: 915px) {
-    .quick-info {
-        width: 100%;
-    }
-}
-
-@media (max-width: 600px) {
-    .event-schedule-section {
-        max-width: 100% !important;
-    }
-    .register-section {
-        .btn-lg {
-            width: 100%;
-        }
-    }
-}
+// MEDIA QUERIES 
 
 @media (max-width: 992px) {
+   .section {
+     padding-top: 30px; 
+     padding-bottom: 30px
+   }
+   .about-section {
+    padding-top: 80px;
+   }
+   .event-schedule-section {
+        max-width: 100% !important;
+    }
   .user-profile-section {
     margin-top: 40px;
     margin-bottom: 40px;
@@ -175,4 +237,39 @@ footer {
           width: 100%;
       }
   }
+  .border-box {
+      margin-bottom: 15px;
+      margin-right: 0;
+  }
+}
+
+
+@media (max-width: 915px) {
+    .quick-info {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 770px) {
+    .subscribe-section {
+        h3 {
+            margin-bottom: 0;
+        }
+        .form-control {
+            text-align: center;
+        }
+        .btn {
+           width: 100%; 
+        }
+    }
+}
+
+
+@media (max-width: 600px) {
+    .register-section {
+        .btn-lg {
+            width: 100%;
+        }
+    }
 }
